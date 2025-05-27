@@ -15,7 +15,7 @@ class SwingCalculator2 extends JFrame {
 
     inputField = new JTextField();
     add(inputField, BorderLayout.NORTH);
-    inputField.setBackground(Color.WHITE);
+    inputField.setBackground(Color.RED);
 
     outputArea = new JTextArea();
     outputArea.setEditable(false);
