@@ -8,14 +8,14 @@ class SwingCalculator2 extends JFrame {
   private final JTextArea outputArea;
 
   public SwingCalculator2() {
-    setTitle("Калькулятор");
+    setTitle("Калькулятор НОВАЯ ВЕРСИЯ");
     setSize(350, 450);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLayout(new BorderLayout());
 
     inputField = new JTextField();
     add(inputField, BorderLayout.NORTH);
-    inputField.setBackground(Color.RED);
+    inputField.setBackground(Color.WHITE);
 
     outputArea = new JTextArea();
     outputArea.setEditable(false);
@@ -95,20 +95,12 @@ class SwingCalculator2 extends JFrame {
         }
 
         double num = numbers.get(i);
-        double res;
-        switch (op) {
-          case "√":
-            res = Math.sqrt(num);
-            break;
-          case "²":
-            res = num * num;
-            break;
-          case "!":
-            res = factorial((int) num);
-            break;
-          default:
-            throw new IllegalArgumentException("Неизвестный унарный оператор: " + op);
-        }
+        double res = switch (op) {
+          case "√" -> Math.sqrt(num);
+          case "²" -> num * num;
+          case "!" -> factorial((int) num);
+          default -> throw new IllegalArgumentException("Неизвестный унарный оператор: " + op);
+        };
 
         numbers.set(i, res);
         operators.remove(i);
