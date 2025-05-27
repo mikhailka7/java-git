@@ -15,12 +15,12 @@ class SwingCalculator2 extends JFrame {
 
     inputField = new JTextField();
     add(inputField, BorderLayout.NORTH);
-    inputField.setBackground(Color.BLUE);
+    inputField.setBackground(Color.WHITE);
 
     outputArea = new JTextArea();
     outputArea.setEditable(false);
     add(new JScrollPane(outputArea), BorderLayout.CENTER);
-    outputArea.setBackground(Color.BLUE);
+    outputArea.setBackground(Color.WHITE);
 
     JPanel buttonPanel = new JPanel();
     buttonPanel.setLayout(new GridLayout(5, 4));
@@ -35,7 +35,7 @@ class SwingCalculator2 extends JFrame {
 
     for (String label : buttons) {
       JButton button = new JButton(label);
-      button.setBackground(Color.BLUE);
+      button.setBackground(Color.WHITE);
       button.addActionListener(e -> buttonClicked(label));
       buttonPanel.add(button);
     }
